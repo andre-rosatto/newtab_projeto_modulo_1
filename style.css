@@ -105,8 +105,8 @@ nav li a {
 
 #main-content-wrapper {
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+	flex-direction: row;
+	align-items: flex-start;
 }
 
 /*
@@ -160,15 +160,123 @@ nav li a {
 	cursor: pointer;
 }
 
+/*
+// transaction statement section
+*/
+.transaction-statement {
+	padding-top: 10px;
+	padding-left: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+}
+
+.transaction-statement h3 {
+	margin-top: 10px;
+	font-size: 18px;
+}
+
+/*
+// transaction statement section table
+*/
+.transaction-statement table {
+	width: 100%;
+	font-size: 14px;
+	margin-top: 20px;
+	border-collapse: collapse;
+}
+
+.transaction-statement table tr {
+	border-bottom: 1px solid #979797;
+}
+
+.transaction-statement table td {
+	vertical-align: top;
+	padding: 8px 0;
+}
+
+.transaction-statement table td:last-child {
+	text-align: right;
+	padding-right: 20px;
+}
+
+/* thead */
+.transaction-statement thead {
+	font-weight: bold;
+}
+
+.transaction-statement thead td:first-child {
+	padding-left: 40px;
+}
+
+/* tbody */
+.transaction-statement tbody td:first-child {
+	width: 40px;
+}
+
+.transaction-statement tbody td.plus::after {
+	content: "+";
+}
+
+.transaction-statement tbody td.minus::after {
+	content: "-";
+}
+
+.transaction-statement tbody td.plus::after,
+.transaction-statement tbody td.minus::after {
+	padding-left: 20px;
+	padding-right: 10px;
+	display: inline;
+}
+
+.transaction-statement tbody td p {
+	max-width: 200px;
+}
+
+/* tfoot */
+.transaction-statement tfoot {
+	font-weight: bold;
+}
+
+.transaction-statement tfoot tr {
+	border-bottom: none;
+}
+
+.transaction-statement tfoot td {
+	padding-top: 2px;
+}
+
+.transaction-statement tfoot td:last-child {
+	padding-right: 0;
+}
+
+.transaction-statement tfoot td p {
+	border-top: 1px solid #979797;
+	padding-top: 15px;
+}
+
+.transaction-statement tfoot td:first-child p {
+	padding-left: 40px;
+}
+
+.transaction-statement tfoot td:last-child p {
+	padding-right: 20px;
+}
+
+.transaction-statement tfoot td:last-child p span {
+	display: block;
+	font-weight: normal;
+	font-size: 10px;
+	text-transform: uppercase;
+}
 
 /*
 // media queries
 */
-@media screen and (max-width: 768px) {
+@media screen and ((max-width: 768px) or (orientation: portrait)) {
 
-	/*
-	// header
-	*/
+	/* header */
 	.title-container {
 		width: 100%;
 		justify-content: space-between;
@@ -228,9 +336,12 @@ nav li a {
 		color: #333;
 	}
 
-	/*
-	// form section
-	*/
+	/* main content */
+	#main-content-wrapper {
+		flex-direction: column;
+	}
+
+	/* form section */
 	.form-section {
 		width: 100%;
 		max-width: none;
@@ -256,13 +367,18 @@ nav li a {
 		align-self: flex-end;
 		width: 200px;
 	}
+
+	/* transaction statement section */
+	.transaction-statement {
+		width: 100%;
+		padding-left: 0;
+		margin-top: 45px;
+	}
 }
 
 @media screen and (max-width: 590px) {
 
-	/*
-	// form section
-	*/
+	/* form section */
 	.form-section {
 		border: none;
 		border-bottom: 1px solid #979797;
