@@ -408,4 +408,8 @@ nav li a {
 		width: 100%;
 		align-self: initial;
 	}
+
+	.transaction-statement table td:last-child {
+		min-width: 150px;
+	}
 }
