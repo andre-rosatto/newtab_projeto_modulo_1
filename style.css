@@ -1,0 +1,157 @@
+@font-face {
+	font-family: Lato;
+	src: url("./assets/fonts/lato-regular-webfont.woff2"), url("./assets/fonts/lato-regular-webfont.woff");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Lato, Arial, Helvetica, sans-serif;
+	color: #333;
+}
+
+/*
+// header
+*/
+header {
+	width: 100%;
+	background-color: #e0e0e0;
+	display: flex;
+	justify-content: center;
+	height: 80px;
+	align-items: center;
+	position: relative;
+}
+
+.outer-wrapper {
+	max-width: 1100px;
+	width: 100%;
+	margin: 0 20px;
+}
+
+.header-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.title-container {
+	display: flex;
+	align-items: center;
+}
+
+.title-container #logo {
+	width: 40px;
+}
+
+.title-container h2 {
+	font-size: 20px;
+	font-weight: bold;
+	margin: 0 15px;
+}
+
+.title-container #menu-icon {
+	display: none;
+}
+
+nav {
+	background-color: white;
+	display: flex;
+	height: 40px;
+	transition: all .25s;
+}
+
+nav #nav-close {
+	background-image: url("./assets/images/nav-close.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 48px;
+	height: 48px;
+	display: none;
+}
+
+nav ul {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 5px;
+}
+
+nav li {
+	list-style-type: none;
+	padding: 0 15px;
+	border-right: 1px solid #979797;
+}
+
+nav li:last-child {
+	border-right: none;
+}
+
+nav li a {
+	text-decoration: none;
+	font-size: 16px;
+}
+
+/*
+// media queries
+*/
+@media screen and (max-width: 768px) {
+	.title-container {
+		width: 100%;
+		justify-content: space-between;
+	}
+
+	.title-container #menu-icon {
+		display: inline-block;
+	}
+
+	nav {
+		position: absolute;
+		right: 0;
+		top: 0;
+		height: 100vh;
+		background-color: #333;
+		min-width: 252px;
+		flex-direction: column;
+		transform: scaleX(1);
+		transform-origin: right;
+	}
+
+	nav.hidden {
+		transform: scaleX(0);
+	}
+
+	nav #nav-close {
+		display: block;
+		cursor: pointer;
+	}
+
+	nav ul {
+		flex-direction: column;
+		width: 100%;
+		padding: 0;
+		justify-content: flex-start;
+	}
+
+	nav li {
+		border: none;
+		width: 100%;
+		text-align: right;
+		padding: 0;
+		margin-top: 10px;
+	}
+
+	nav li.selected {
+		background-color: #c4c4c4;
+	}
+
+	nav li a {
+		color: white;
+		padding: 8px 15px 8px 0;
+		display: block;
+	}
+
+	nav li.selected a {
+		color: #333;
+	}
+}
