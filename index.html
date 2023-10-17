@@ -16,7 +16,7 @@
 				<h2>Controle financeiro</h2>
 				<img id="menu-icon" src="./assets/images/menu.svg" alt="menu" title="Menu">
 			</div>
-			<nav class="">
+			<nav class="hidden">
 				<div id="nav-close"></div>
 				<ul>
 					<li><a href="#">Limpar dados</a></li>
@@ -25,6 +25,31 @@
 			</nav>
 		</div>
 	</header>
+	<div id="main-content">
+		<div id="main-content-wrapper" class="outer-wrapper">
+			<section class="form-section">
+				<h3>Nova transação</h3>
+				<form>
+					<div class="form-section__form-item">
+						<label>Tipo de transação</label>
+						<select name="transaction-type">
+							<option value="buy">Compra</option>
+							<option value="sell">Venda</option>
+						</select>
+					</div>
+					<div class="form-section__form-item">
+						<label for="product-name">Nome da mercadoria</label>
+						<input type="text" name="product-name" placeholder="Input" id="product-name">
+					</div>
+					<div class="form-section__form-item">
+						<label>Valor</label>
+						<input type="text" name="value" placeholder="R$ 0,00" readonly>
+					</div>
+				</form>
+				<button>Adicionar transação</button>
+			</section>
+		</div>
+	</div>
 </body>
 
 </html>
