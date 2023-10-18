@@ -12,7 +12,7 @@
 }
 
 /*
-// main content
+// main content + generics
 */
 #main-content {
 	width: 100%;
@@ -28,6 +28,12 @@
 	align-items: flex-start;
 }
 
+.outer-wrapper {
+	max-width: 1100px;
+	width: 100%;
+	padding: 0 20px;
+}
+
 /*
 // header
 */
@@ -39,12 +45,6 @@ header {
 	height: 80px;
 	align-items: center;
 	position: relative;
-}
-
-.outer-wrapper {
-	max-width: 1100px;
-	width: 100%;
-	padding: 0 20px;
 }
 
 .header-container {
