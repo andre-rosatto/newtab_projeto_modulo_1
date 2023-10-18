@@ -12,6 +12,23 @@
 }
 
 /*
+// main content
+*/
+#main-content {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 20px 0;
+}
+
+#main-content-wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+}
+
+/*
 // header
 */
 header {
@@ -93,28 +110,11 @@ nav li a {
 }
 
 /*
-// main content
-*/
-#main-content {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding-top: 20px;
-}
-
-#main-content-wrapper {
-	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
-}
-
-/*
 // form section
 */
 .form-section {
-	max-width: 400px;
-	min-width: 300px;
+	/* max-width: 400px; */
+	width: 300px;
 	border: 1px solid #979797;
 	border-radius: 4px;
 	display: flex;
@@ -196,6 +196,12 @@ nav li a {
 	padding: 8px 0;
 }
 
+.transaction-statement td:first-child {
+	width: 40px;
+	max-width: 40px;
+	padding-left: 20px;
+}
+
 .transaction-statement table td:last-child {
 	text-align: right;
 	padding-right: 20px;
@@ -211,24 +217,6 @@ nav li a {
 }
 
 /* tbody */
-.transaction-statement tbody td:first-child {
-	width: 40px;
-}
-
-.transaction-statement tbody td.plus::after {
-	content: "+";
-}
-
-.transaction-statement tbody td.minus::after {
-	content: "-";
-}
-
-.transaction-statement tbody td.plus::after,
-.transaction-statement tbody td.minus::after {
-	padding-left: 20px;
-	padding-right: 10px;
-	display: inline;
-}
 
 .transaction-statement tbody td p {
 	max-width: 200px;
@@ -254,10 +242,6 @@ nav li a {
 .transaction-statement tfoot td p {
 	border-top: 1px solid #979797;
 	padding-top: 15px;
-}
-
-.transaction-statement tfoot td:first-child p {
-	padding-left: 40px;
 }
 
 .transaction-statement tfoot td:last-child p {
@@ -353,8 +337,9 @@ nav li a {
 		justify-content: space-between;
 	}
 
-	.form-section__form-item select {
-		width: 150px;
+	.form-section__form-item select,
+	.form-section__form-item:last-child {
+		width: 125px;
 	}
 
 	.form-section__form-item:nth-child(2) {
@@ -395,7 +380,7 @@ nav li a {
 	}
 
 	.form-section__form-item select,
-	.form-section__form-item input {
+	.form-section__form-item:last-child {
 		width: 100%;
 	}
 
