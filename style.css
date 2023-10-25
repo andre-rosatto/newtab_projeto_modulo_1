@@ -8,13 +8,13 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: Lato, Arial, Helvetica, sans-serif;
-	color: #333;
+	color: black;
 }
 
 /*
 // main content + generics
 */
-#main-content {
+main {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -97,7 +97,7 @@ nav ul {
 nav li {
 	list-style-type: none;
 	padding: 0 15px;
-	border-right: 1px solid #979797;
+	border-right: 1px solid #888;
 }
 
 nav li:last-child {
@@ -113,14 +113,13 @@ nav li a {
 // form section
 */
 .form-section {
-	/* max-width: 400px; */
-	width: 300px;
-	border: 1px solid #979797;
+	width: 400px;
+	border: 1px solid #888;
 	border-radius: 4px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 10px;
+	padding: 10px 15px 15px 15px;
 }
 
 .form-section h3 {
@@ -148,7 +147,8 @@ nav li a {
 .form-section__form-item input {
 	padding: 7px 7px;
 	border-radius: 4px;
-	border: 1px solid #979797;
+	border: 1px solid #888;
+	color: #888;
 }
 
 .form-section button {
@@ -188,7 +188,7 @@ nav li a {
 }
 
 .transaction-statement table tr {
-	border-bottom: 1px solid #979797;
+	border-bottom: 1px solid #888;
 }
 
 .transaction-statement table td {
@@ -235,12 +235,16 @@ nav li a {
 	padding-top: 2px;
 }
 
+.transaction-statement tfoot td:first-child {
+	padding-left: 0;
+}
+
 .transaction-statement tfoot td:last-child {
 	padding-right: 0;
 }
 
 .transaction-statement tfoot td p {
-	border-top: 1px solid #979797;
+	border-top: 1px solid #888;
 	padding-top: 15px;
 }
 
@@ -256,18 +260,38 @@ nav li a {
 }
 
 /*
+// footer
+*/
+footer {
+	width: 100%;
+	height: 8px;
+	background-color: #333333;
+	position: fixed;
+	bottom: 0;
+}
+
+/*
 // media queries
 */
-@media screen and ((max-width: 768px) or (orientation: portrait)) {
+@media screen and ((max-width: 806px) or (orientation: portrait)) {
 
 	/* header */
+	header {
+		height: 60px;
+	}
+
 	.title-container {
 		width: 100%;
 		justify-content: space-between;
 	}
 
+	.title-container #logo {
+		width: 30px;
+	}
+
 	.title-container #menu-icon {
 		display: inline-block;
+
 	}
 
 	nav {
@@ -333,8 +357,17 @@ nav li a {
 
 	.form-section form {
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		justify-content: space-between;
+	}
+
+	.form-section .form-section__form-part {
+		width: 100%;
+		display: flex;
+	}
+
+	.form-section .form-section__form-part:last-child {
+		justify-content: flex-end;
 	}
 
 	.form-section__form-item select,
@@ -349,7 +382,6 @@ nav li a {
 	}
 
 	.form-section button {
-		align-self: flex-end;
 		width: 200px;
 	}
 
@@ -362,11 +394,14 @@ nav li a {
 }
 
 @media screen and (max-width: 590px) {
+	nav {
+		min-width: 80%;
+	}
 
 	/* form section */
 	.form-section {
 		border: none;
-		border-bottom: 1px solid #979797;
+		border-bottom: 1px solid #888;
 		padding-bottom: 30px;
 	}
 
@@ -377,6 +412,10 @@ nav li a {
 	.form-section form {
 		flex-direction: column;
 		margin-top: 0;
+	}
+
+	.form-section .form-section__form-part {
+		flex-direction: column;
 	}
 
 	.form-section__form-item select,

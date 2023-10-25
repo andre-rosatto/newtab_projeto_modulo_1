@@ -19,41 +19,45 @@
 			<nav class="hidden">
 				<div id="nav-close"></div>
 				<ul>
-					<li><a href="#">Limpar dados</a></li>
-					<li class="selected"><a href="#">Cadastro de transações</a></li>
+					<li><a href="javascript:void(0);">Limpar dados</a></li>
+					<li class="selected"><a href="javascript:void(0);">Cadastro de transações</a></li>
 				</ul>
 			</nav>
 		</div>
 	</header>
-	<div id="main-content">
+	<main>
 		<div id="main-content-wrapper" class="outer-wrapper">
 			<section class="form-section">
 				<h3>Nova transação</h3>
 				<form>
-					<div class="form-section__form-item">
-						<label>Tipo de transação</label>
-						<select name="transaction-type">
-							<option value="buy">Compra</option>
-							<option value="sell">Venda</option>
-						</select>
+					<div class="form-section__form-part">
+						<div class="form-section__form-item">
+							<label>Tipo de transação</label>
+							<select name="transaction-type" id="transaction-type">
+								<option value="buy">Compra</option>
+								<option value="sell">Venda</option>
+							</select>
+						</div>
+						<div class="form-section__form-item">
+							<label for="product-name">Nome da mercadoria</label>
+							<input type="text" name="product-name" placeholder="Input" id="product-name">
+						</div>
+						<div class="form-section__form-item">
+							<label for="value">Valor</label>
+							<input type="number" name="value" placeholder="R$ 0,00" step="any" id="product-value">
+						</div>
 					</div>
-					<div class="form-section__form-item">
-						<label for="product-name">Nome da mercadoria</label>
-						<input type="text" name="product-name" placeholder="Input" id="product-name">
-					</div>
-					<div class="form-section__form-item">
-						<label>Valor</label>
-						<input type="number" name="value" placeholder="R$ 0,00" step="any">
+					<div class="form-section__form-part">
+						<button>Adicionar transação</button>
 					</div>
 				</form>
-				<button>Adicionar transação</button>
 			</section>
 			<section class="transaction-statement">
 				<h3>Extrato de transações</h3>
 				<table>
 					<thead>
 						<tr>
-							<td></td>
+							<td>&nbsp;</td>
 							<td>Mercadoria</td>
 							<td>Valor</td>
 						</tr>
@@ -84,7 +88,7 @@
 					<tfoot>
 						<tr>
 							<td>
-								<p></p>
+								<p>&nbsp;</p>
 							</td>
 							<td>
 								<p>Total</p>
@@ -97,7 +101,8 @@
 				</table>
 			</section>
 		</div>
-	</div>
+	</main>
+	<footer></footer>
 </body>
 
 </html>
