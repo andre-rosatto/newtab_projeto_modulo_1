@@ -199,7 +199,6 @@ nav li a {
 .transaction-statement td:first-child {
 	width: 40px;
 	max-width: 40px;
-	padding-left: 20px;
 }
 
 .transaction-statement table td:last-child {
@@ -218,6 +217,10 @@ nav li a {
 
 /* tbody */
 
+.transaction-statement tbody td:first-child {
+	padding-left: 20px;
+}
+
 .transaction-statement tbody td p {
 	max-width: 200px;
 }
@@ -233,10 +236,6 @@ nav li a {
 
 .transaction-statement tfoot td {
 	padding-top: 2px;
-}
-
-.transaction-statement tfoot td:first-child {
-	padding-left: 0;
 }
 
 .transaction-statement tfoot td:last-child {
