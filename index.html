@@ -14,12 +14,12 @@
 			<div class="title-container">
 				<img id="logo" src="./assets/images/logo.svg" alt="logo" title="Logo">
 				<h2>Controle financeiro</h2>
-				<img id="menu-icon" src="./assets/images/menu.svg" alt="menu" title="Menu">
+				<img id="menu-icon" src="./assets/images/menu.svg" alt="menu" title="Menu" onclick="onMenuClick();">
 			</div>
 			<nav class="hidden">
-				<div id="nav-close"></div>
+				<div id="nav-close" onclick="onNavClose();"></div>
 				<ul>
-					<li><a href="javascript:void(0);">Limpar dados</a></li>
+					<li><a href="javascript:void(0);" onclick="onClearClick();">Limpar dados</a></li>
 					<li class="selected"><a href="javascript:void(0);">Cadastro de transações</a></li>
 				</ul>
 			</nav>
@@ -29,7 +29,7 @@
 		<div id="main-content-wrapper" class="outer-wrapper">
 			<section class="form-section">
 				<h3>Nova transação</h3>
-				<form>
+				<form onsubmit="onAddClick(event); return false;">
 					<div class="form-section__form-part">
 						<div class="form-section__form-item">
 							<label>Tipo de transação</label>
@@ -40,11 +40,12 @@
 						</div>
 						<div class="form-section__form-item">
 							<label for="product-name">Nome da mercadoria</label>
-							<input type="text" name="product-name" placeholder="Input" id="product-name">
+							<input type="text" name="product-name" placeholder="Input" id="product-name" required>
 						</div>
 						<div class="form-section__form-item">
 							<label for="value">Valor</label>
-							<input type="number" name="value" placeholder="R$ 0,00" step="any" id="value">
+							<input type="text" name="value" placeholder="R$ 0,00" step="any" id="value"
+								oninput="onValueInput(event);">
 						</div>
 					</div>
 					<div class="form-section__form-part">
@@ -63,27 +64,6 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>+</td>
-							<td>
-								<p>Lorem ipsum dolor sit amet consectetur</p>
-							</td>
-							<td>R$ 12.999,99</td>
-						</tr>
-						<tr>
-							<td>-</td>
-							<td>
-								<p>Quis nostrud exercitation</p>
-							</td>
-							<td>R$ 99,99</td>
-						</tr>
-						<tr>
-							<td>+</td>
-							<td>
-								<p>Lorem ipsum </p>
-							</td>
-							<td>R$ 9,99</td>
-						</tr>
 					</tbody>
 					<tfoot>
 						<tr>
@@ -94,7 +74,7 @@
 								<p>Total</p>
 							</td>
 							<td>
-								<p>R$ 12.909,99<span>[lucro]</span></p>
+								<p id="total"><span></span></p>
 							</td>
 						</tr>
 					</tfoot>
@@ -103,6 +83,7 @@
 		</div>
 	</main>
 	<footer></footer>
+	<script src="./assets/js/script.js"></script>
 </body>
 
 </html>
