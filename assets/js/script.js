@@ -32,7 +32,7 @@ function addRows() {
 	for (const item of data) {
 		tableBody.innerHTML += `
 			<tr>
-				<td>${item.transaction === 'buy' ? '+' : '-'}</td>
+				<td>${item.transaction === 'buy' ? '-' : '+'}</td>
 				<td>
 					<p>${item.product}</p>
 				</td>
@@ -50,7 +50,7 @@ function addRows() {
 	document.querySelector('#total').innerHTML = `
 		${getFormattedValue(Math.abs(total))}
 		<span>
-			${profitText};
+			${profitText}
 		</span>
 	`;
 }
@@ -58,11 +58,11 @@ function addRows() {
 function addEmptyRow() {
 	document.querySelector('table tbody').innerHTML = `
 		<tr>
-			<td></td>
+			<td>&nbsp;</td>
 			<td>
 				<p>Nenhuma transação cadastrada.</p>
 			</td>
-			<td></td>
+			<td>&nbsp;</td>
 		</tr>
 	`;
 	document.querySelector('#total').innerHTML = getFormattedValue(0);
@@ -88,11 +88,11 @@ function onValueInput(e) {
 
 function onAddClick(e) {
 	e.preventDefault();
-	const transctionType = document.querySelector('#transaction-type').value;
+	const transactionType = document.querySelector('#transaction-type').value;
 	const newItem = {
-		transaction: transctionType,
+		transaction: transactionType,
 		product: document.querySelector('#product-name').value,
-		value: transctionType === 'buy' ? getRawValue() : -getRawValue()
+		value: transactionType === 'buy' ? -getRawValue() : getRawValue()
 	};
 	data.push(newItem);
 	updateList();
@@ -100,6 +100,7 @@ function onAddClick(e) {
 }
 
 function clearForm() {
+	document.querySelector('#transaction-type').value = 'buy';
 	document.querySelector('#product-name').value = '';
 	document.querySelector('#value').value = getFormattedValue(0);
 }
